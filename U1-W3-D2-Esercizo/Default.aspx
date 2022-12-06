@@ -10,10 +10,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:ValidationSummary ID="validationSummary" HeaderText="Si sono verificati i seguenti" ShowMessageBox="true" runat="server" />    
+            
             Username: <asp:TextBox ID="txtUsername" runat="server"  />
-            <%-- Inserire il controllo dell'username --%>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Username obbligatorio" ControlToValidate="txtUsername" runat="server" ForeColor="Red" Display="None" />
 
             Password: <asp:TextBox ID="txtPassword" runat="server" />
+             <asp:CompareValidator ID="CompareValidator1" ErrorMessage="Password obbligatorio" ControlToValidate="txtPassword" runat="server" ForeColor="Red" Display="None" />
 
             <asp:Button Text="Login" runat="server" OnClick="Login_Click" />
         </div>
