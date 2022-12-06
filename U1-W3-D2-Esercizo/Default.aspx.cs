@@ -21,15 +21,22 @@ namespace U1_W3_D2_Esercizo
             cookie.Expires = DateTime.Now.AddDays(60);
             Response.Cookies.Add(cookie);
 
-            if (Request.Cookies != null) {
+            if (cookie.Values["username"] != "") {
                 Response.Redirect("Utente.aspx");
-            }
-
-
-            if (Request.Cookies == null)
+            } else
             {
                 Response.Redirect("Default.aspx");
             }
+
+            //if (Request.Cookies != null) {
+            //    Response.Redirect("Utente.aspx");
+            //}
+
+
+            //if (Request.Cookies == null)
+            //{
+            //    Response.Redirect("Default.aspx");
+            //}
         }
     }
 }
