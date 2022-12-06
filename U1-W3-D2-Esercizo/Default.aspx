@@ -10,12 +10,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="txtUsername" runat="server" Text="Inserire Username" />
+            Username: <asp:TextBox ID="txtUsername" runat="server"  />
             <%-- Inserire il controllo dell'username --%>
 
-            <asp:TextBox ID="txtPassword" runat="server" Text="Inserire la password" />
+            Password: <asp:TextBox ID="txtPassword" runat="server" />
 
-            <asp:Button Text="Login" runat="server" />
+            <asp:Button Text="Login" runat="server" OnClick="Login_Click" />
         </div>
     </form>
 </body>

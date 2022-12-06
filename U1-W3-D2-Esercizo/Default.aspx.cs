@@ -14,6 +14,16 @@ namespace U1_W3_D2_Esercizo
 
         }
 
+        protected void Login_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie = new HttpCookie("Auth");
+            cookie.Values["username"] = txtUsername.Text;
+            cookie.Expires = DateTime.Now.AddDays(60);
+            Response.Cookies.Add(cookie);
 
+            if (Request.Cookies != null) {
+                Response.Redirect("Utente.aspx");
+            }
+        }
     }
 }
