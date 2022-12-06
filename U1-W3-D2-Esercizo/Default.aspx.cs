@@ -24,6 +24,12 @@ namespace U1_W3_D2_Esercizo
             if (Request.Cookies != null) {
                 Response.Redirect("Utente.aspx");
             }
+
+
+            if (Request.Cookies == null)
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }
